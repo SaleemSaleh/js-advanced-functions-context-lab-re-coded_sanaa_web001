@@ -66,7 +66,7 @@ function allWagesFor (){
   for (let i = 0 ; i < this.timeInEvents.length ; i++ ) {
     hour += wagesEarnedOnDate.call(this ,this.timeInEvents[i].date);
   }
-  return hour * this.payPerHour ;
+  return hour  ;
 }
 
 function findEmployeeByFirstName (srcArray,firstName ){
