@@ -73,7 +73,25 @@ function wagesEarnedOnDate (date){
   return hoursWorkedOnDate.bind(this,date) * this.payPerHour ;
 }
 
+function allWagesFor (){
+  let hour = 0;
+  for (let i = 0 ; i < this.timeInEvents.length ; i++ ) {
+    hour += ((this.timeOutEvents[i].hour - this.timeInEvents[i].hour) / 100 );
+  }
+  return hour * this.payPerHour ;
+}
+
 function findEmployeeByFirstName (srcArray,firstName ){
   let s= srcArray.find((x) => x.firstName === firstName);
   return s;
+}
+
+function calculatePayroll (srcArray ){
+  let sum = 0 ;
+  for (let i = 0 ; i < srcArray.length ; i++ ) {
+    for (let j = 0 ; j < srcArray[i].timeInEvents.length ; j++ ){
+      sum += wagesEarnedOnDate.bind(srcArray[i],srcArray[i].timeInEvents[j].date) ;
+    }
+  }
+  return sum ;
 }
