@@ -90,7 +90,7 @@ function calculatePayroll (srcArray ){
   let sum = 0 ;
   for (let i = 0 ; i < srcArray.length ; i++ ) {
     for (let j = 0 ; j < srcArray[i].timeInEvents.length ; j++ ){
-      sum += wagesEarnedOnDate(srcArray[i],srcArray[i].timeInEvents[j].date) ;
+      sum += wagesEarnedOnDate.bind(srcArray[i],srcArray[i].timeInEvents[j].date) ;
     }
   }
   return sum ;
