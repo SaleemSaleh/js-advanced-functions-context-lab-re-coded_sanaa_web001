@@ -64,7 +64,7 @@ function wagesEarnedOnDate (date){
 function allWagesFor (){
   let hour = 0;
   for (let i = 0 ; i < this.timeInEvents.length ; i++ ) {
-    hour += ((this.timeOutEvents[i].hour - this.timeInEvents[i].hour) / 100 );
+    hour += wagesEarnedOnDate.call(this ,this.timeInEvents[i].date);
   }
   return hour * this.payPerHour ;
 }
