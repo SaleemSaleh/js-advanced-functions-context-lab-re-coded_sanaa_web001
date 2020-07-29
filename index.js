@@ -77,4 +77,3 @@ function findEmployeeByFirstName (srcArray,firstName ){
   let s= srcArray.find((x) => x.firstName === firstName);
   return s;
 }
-
