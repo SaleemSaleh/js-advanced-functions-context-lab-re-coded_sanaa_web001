@@ -20,3 +20,15 @@ let allWagesFor = function () {
 
     return payable
 }
+
+function createEmployeeRecord (arraySt){
+
+  return {
+      firstName : arraySt[0],
+      familyName: arraySt[1],
+      payPerHour: arraySt[3],
+      payPerHour: arraySt[3],
+      timeInEvents : [],
+      timeOutEvents:[]
+  }
+}
